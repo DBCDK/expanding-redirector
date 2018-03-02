@@ -2,10 +2,6 @@ pipeline {
     agent {
 	label "devel9"
     }
-    tools {
-    }
-    environment {
-    }
     triggers {
 	pollSCM("H/3 * * * *")
     }
