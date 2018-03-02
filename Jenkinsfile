@@ -1,6 +1,6 @@
 pipeline {
     agent {
-	label "devel9"
+	label "devel8"
     }
     triggers {
 	pollSCM("H/3 * * * *")
