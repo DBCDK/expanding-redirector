@@ -1,8 +1,8 @@
 FROM docker.dbc.dk/dbc-stretch:latest
 MAINTAINER DBC <dbc@dbc.dk>
 
-ENV PORT=8888
-LABEL PORT="Port to listen for http requests on (default: 8888)"
+ENV HTTP_PORT=8888
+LABEL HTTP_PORT="Port to listen for http requests on (default: 8888)"
 
 
 RUN useradd -u 8888 -d /var/lib/redirector -m -s /bin/bash redirector
