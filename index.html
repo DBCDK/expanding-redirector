@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Redirect-Expander</title>
+    </head>
+    <body>
+        <h1>Redirect-Expander</h1>
+        <hr>
+        <p>
+            Expands an path into a url and redirects to said url.
+        </p>
+        <p>
+            Path: &quot;http://this.host/foo.example.com:8080/bar?one=2&two=%(RANDOM)%&quot; redirects to
+            &quot;http://foo.example.com:8080/bar?one=2&two=7&quot; (or whichever random number is given)
+        </p>
+
+        <dl>
+            <dt>NOW</dt><dd>Takes no argument and inserts current time in milliseconds</dd>
+            <dt>ONEOF</dt><dd>Takes an argument list, separated by ';' and inserts one of these<br>
+                eg. %(ONEOF:horse;cow;dog;cat)% will expand to a 4 legged mammal<br>
+                Remember %3B expands into a ';'</dd>
+            <dt>RANDOM</dt><dd>Takes a comma separated list of 0, 1 or 2 arguments:
+                <dl>
+                    <dt>0</dt><dd>Inserts a number between 0 and 9 (both included)</dd>
+                    <dt>1</dt><dd>Inserts a number between 0 and the argument (both included) (can be negative)</dd>
+                    <dt>2</dt><dd>Inserts a number between the two arguments (both included) (can be negative)</dd>
+                </dl>
+            </dd>
+        </dl>
+    </body>
+</html>
