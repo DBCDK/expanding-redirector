@@ -11,4 +11,5 @@ if [ -d /docker-entrypoint-confd.d ]; then
 	done
 fi
 
-python3 /var/lib/redirector/expanding-redirector.py -d /var/lib/redirector/ -p $PORT
+exec python3 /var/lib/redirector/expanding-redirector.py -d /var/lib/redirector/ -p $PORT
+
