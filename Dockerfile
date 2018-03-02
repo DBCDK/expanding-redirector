@@ -14,4 +14,4 @@ ADD expanding-redirector.py index.html /var/lib/redirector/
 USER redirector
 WORKDIR /var/lib/redirector
 EXPOSE 8888
-CMD [ "/bin/bash", "/docker-entrypoint.sh" ]
+CMD [ "/bin/bash", "-c", "/docker-entrypoint.sh" ]
