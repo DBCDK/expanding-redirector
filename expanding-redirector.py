@@ -38,11 +38,13 @@ class MainHandler(tornado.web.RequestHandler):
                  'NOW': lambda x: str(round(time.time() * 1000)),
                  'ONEOF': lambda x: MainHandler.one_of(x),
                  'RANDOM': lambda x: MainHandler.random_number(x)}
-    
+
     def get(self, url):
         try:
-            url = 'http:/' + self.expand_url() # url starts with /
-            print("uri:", url)
+            url = self.expand_url()[1:] # url starts with /
+            if '://' not in url:
+                url = 'http://' + url
+            print("uri: %s -> %s"%(self.request.uri, url))
             self.redirect(url)
         except Exception as e:
             print_exc()
