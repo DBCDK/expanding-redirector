@@ -14,6 +14,10 @@
             Path: &quot;http://this.host/foo.example.com:8080/bar?one=2&two=%(RANDOM)%&quot; redirects to
             &quot;http://foo.example.com:8080/bar?one=2&two=7&quot; (or whichever random number is given)
         </p>
+	<p>
+	  The path can also start with &quot;http://&quot; or &quot;https://&quot; for explicit protocol
+	  choice.
+	</p>
 
         <dl>
             <dt>NOW</dt><dd>Takes no argument and inserts current time in milliseconds</dd>
